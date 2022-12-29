@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
     const [isToggleOpen, setIsToggleOpen] = useState(false)
@@ -81,7 +82,8 @@ export default function Navbar() {
                                 }`}
                         >
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    to='/add'
                                     role="menuitem"
                                     aria-haspopup="false"
                                     tabIndex="0"
@@ -89,10 +91,11 @@ export default function Navbar() {
                                     href="javascript:void(0)"
                                 >
                                     <span>Add Task</span>
-                                </a>
+                                </Link>
                             </li>
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    to='/my-tasks'
                                     role="menuitem"
                                     aria-current="page"
                                     aria-haspopup="false"
@@ -101,10 +104,11 @@ export default function Navbar() {
                                     href="javascript:void(0)"
                                 >
                                     <span>My Tasks</span>
-                                </a>
+                                </Link>
                             </li>
                             <li role="none" className="flex items-stretch">
-                                <a
+                                <Link
+                                    to='/completed-tasks'
                                     role="menuitem"
                                     aria-haspopup="false"
                                     tabIndex="0"
@@ -112,7 +116,7 @@ export default function Navbar() {
                                     href="javascript:void(0)"
                                 >
                                     <span>Completed Tasks</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                         {/*      <!-- Actions --> */}
