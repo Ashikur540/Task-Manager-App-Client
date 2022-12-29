@@ -2,12 +2,12 @@ import React from "react"
 
 export default function Spinner() {
     return (
-        <>
+        <div div className="mx-auto mt-24">
             {/*<!-- Component: Square horizontal sm sized spinner  --> */}
             <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                width="44"
+                height="44"
+                viewBox="0 0 44 44"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 aria-live="polite"
@@ -27,6 +27,6 @@ export default function Spinner() {
                 />
             </svg>
             {/*<!-- End Square horizontal sm sized spinner  --> */}
-        </>
+        </div>
     )
 }

@@ -1,8 +1,8 @@
 import React from "react";
-
-export default function TaskCard({ task }) {
+import { BiEdit, BiTrashAlt } from "react-icons/bi";
+export default function TaskCard({ task, handleDelete }) {
     // console.log("from component", task);
-    const { taskTitle, taskDesc, taskAuthor, taskImage } = task;
+    const { taskTitle, taskDesc, taskAuthor, taskImage, _id } = task;
     return (
         <>
             {/*<!-- Component: E-commerce card --> */}
@@ -17,10 +17,14 @@ export default function TaskCard({ task }) {
                 </figure>
                 {/*  <!-- Body--> */}
                 <div className="p-6">
-                    <header className="mb-4">
+                    <header className="mb-4 flex justify-between items-center">
                         <h3 className="text-xl font-medium text-slate-700">
                             {taskTitle}
                         </h3>
+                        <div className="flex justify-evenly items-center cursor-pointer text-xl space-x-2">
+                            <BiEdit />
+                            <button onClick={() => handleDelete(_id)}><BiTrashAlt /></button>
+                        </div>
                         {/* <p className=" text-slate-400"> $8.99</p> */}
                     </header>
                     <p>
