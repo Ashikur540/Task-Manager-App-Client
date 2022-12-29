@@ -1,12 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
 import Spinner from '../Components/Spinner/Spinner';
 import TaskCard from '../Components/TaskCard/TaskCard';
+import { AuthContext } from '../Contexts/AuthProvider';
 
 const MyTasks = () => {
+    const { user } = useContext(AuthContext)
     const { data: mytasks = [], isLoading } = useQuery({
         queryKey: ['mytasks'],
-        queryFn: () => fetch(`${process.env.REACT_APP_Base_URL}/my-tasks`)
+        queryFn: () => fetch(`${process.env.REACT_APP_Base_URL}/my-tasks?email=${user?.email}`)
             .then(res => res.json())
     })
 
