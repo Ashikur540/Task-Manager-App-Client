@@ -1,16 +1,17 @@
 import React from "react";
 
 export default function TaskCard({ task }) {
-    console.log("from component", task);
+    // console.log("from component", task);
+    const { taskTitle, taskDesc, taskAuthor, taskImage } = task;
     return (
         <>
             {/*<!-- Component: E-commerce card --> */}
-            <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
+            <div className="overflow-hidden w-auto rounded bg-white text-slate-500 shadow-md shadow-slate-200">
                 {/*  <!-- Image --> */}
                 <figure>
                     <img
-                        src="https://picsum.photos/id/493/800/600"
-                        alt="card image"
+                        src={taskImage}
+                        alt="cardimage"
                         className="aspect-video w-full"
                     />
                 </figure>
@@ -18,19 +19,18 @@ export default function TaskCard({ task }) {
                 <div className="p-6">
                     <header className="mb-4">
                         <h3 className="text-xl font-medium text-slate-700">
-                            Greek breakfast
+                            {taskTitle}
                         </h3>
-                        <p className=" text-slate-400"> $8.99</p>
+                        {/* <p className=" text-slate-400"> $8.99</p> */}
                     </header>
                     <p>
-                        Blueberry Superpower: Vanilla Greek Yogurt + Fresh Blueberries +
-                        Granola + Honey.
+                        {taskDesc}
                     </p>
                 </div>
                 {/*  <!-- Action base sized basic button --> */}
                 <div className="flex justify-end p-6 pt-0">
                     <button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-emerald-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
-                        <span>Order now!</span>
+                        <span>Complete task</span>
                     </button>
                 </div>
             </div>

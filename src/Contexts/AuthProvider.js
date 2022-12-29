@@ -1,7 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
-import React, { createContext, useEffect, useReducer, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import app from "../Firebase/config";
-import { initialState, reducer } from "./Advertise";
 
 
 
@@ -12,8 +11,6 @@ const AuthProvider = ({ children }) => {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
 
-    // advertise
-    const [state, dispatch] = useReducer(reducer, initialState)
 
 
 
@@ -66,7 +63,7 @@ const AuthProvider = ({ children }) => {
         loginUser,
         logoutUser,
         googleSignin,
-        state, dispatch
+
 
     }
     return (

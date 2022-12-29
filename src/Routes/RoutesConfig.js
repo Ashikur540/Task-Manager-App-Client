@@ -3,6 +3,8 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home";
 import MyTasks from "../pages/MyTasks";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
+import Login from "../pages/shared/Login/Login";
+import Register from "../pages/shared/Register/Register";
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ export const router = createBrowserRouter([
             {
                 path: "/my-tasks",
                 element: <MyTasks></MyTasks>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
             },
         ]
 

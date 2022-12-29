@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
+import { AuthContext } from '../Contexts/AuthProvider';
 const AddTask = () => {
-
+    const { user } = useContext(AuthContext);
     const { register, handleSubmit, reset } = useForm();
 
 
@@ -28,7 +29,7 @@ const AddTask = () => {
                 // let img_url = imagedata.data.display_url
                 // create Task info object for db
                 const taskInfo = {
-                    taskTitle, taskDesc, taskImage: imagedata.data.display_url,
+                    taskTitle, taskDesc, taskImage: imagedata.data.display_url, taskAuthor: user?.email
                 }
                 // save the task data to db
                 fetch(`${process.env.REACT_APP_Base_URL}/add`, {

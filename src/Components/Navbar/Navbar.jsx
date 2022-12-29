@@ -1,7 +1,10 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../Contexts/AuthProvider"
 
 export default function Navbar() {
+    const { user } = useContext(AuthContext)
+
     const [isToggleOpen, setIsToggleOpen] = useState(false)
 
     return (
@@ -118,10 +121,22 @@ export default function Navbar() {
                                     <span>Completed Tasks</span>
                                 </Link>
                             </li>
+                            <li role="none" className="flex items-stretch">
+                                <Link
+                                    to='/login'
+                                    role="menuitem"
+                                    aria-haspopup="false"
+                                    tabIndex="0"
+                                    className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:bg-emerald-50 focus:outline-none focus-visible:outline-none lg:px-8"
+                                    href="javascript:void(0)"
+                                >
+                                    <span>Login</span>
+                                </Link>
+                            </li>
                         </ul>
                         {/*      <!-- Actions --> */}
                         <div className="ml-auto flex items-center justify-end px-6 lg:ml-0 lg:flex-1 lg:p-0">
-                            <a
+                            <Link
                                 href="#"
                                 className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-lg text-emerald-500"
                             >
@@ -146,7 +161,11 @@ export default function Navbar() {
                                 <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 px-1.5 text-sm text-white">
                                     2<span className="sr-only"> new emails </span>
                                 </span>
-                            </a>
+                            </Link>
+
+                            <div className="mx-2 font-semibold text-lg">
+                                <p>{user ? user?.email : ""}</p>
+                            </div>
                         </div>
                     </nav>
                 </div>
