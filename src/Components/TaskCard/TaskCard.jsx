@@ -1,5 +1,6 @@
 import React from "react";
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 export default function TaskCard({ task, handleDelete }) {
     // console.log("from component", task);
     const { taskTitle, taskDesc, taskAuthor, taskImage, _id } = task;
@@ -33,11 +34,11 @@ export default function TaskCard({ task, handleDelete }) {
                 </div>
                 {/*  <!-- Action base sized basic button --> */}
                 <div className="flex justify-end p-6 pt-0">
-                    <button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-emerald-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
-                        <span>Complete task</span>
-                    </button>
-                </div>
-            </div>
+                    <Link to='/completedTask'><button className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-emerald-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+                        <span span > Complete task</span>
+                    </button></Link>
+                </div >
+            </div >
             {/*<!-- End E-commerce card --> */}
         </>
     )

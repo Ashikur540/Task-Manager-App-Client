@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
+import CompletedTask from "../pages/CompletedTask";
 import Home from "../pages/Home";
 import MyTasks from "../pages/MyTasks";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/completedTask",
+                element: <CompletedTask></CompletedTask>
             },
         ]
 
