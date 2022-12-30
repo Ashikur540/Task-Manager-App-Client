@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import CompletedTask from "../pages/CompletedTask";
+import EditTask from "../pages/EditTask";
 import Home from "../pages/Home";
 import MyTasks from "../pages/MyTasks";
 import ErrorPage from "../pages/shared/ErrorPage/ErrorPage";
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
             {
                 path: "/completedTask",
                 element: <CompletedTask></CompletedTask>
+            },
+            {
+                path: "/my-tasks/:id/edit",
+                element: <>< EditTask /></>,
+                errorElement: <ErrorPage />,
             },
         ]
 

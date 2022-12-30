@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Spinner() {
     return (
-        <div div className="mx-auto mt-24">
+        <div className="mx-auto mt-24">
             {/*<!-- Component: Square horizontal sm sized spinner  --> */}
             <svg
                 width="44"

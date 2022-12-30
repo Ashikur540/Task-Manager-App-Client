@@ -23,7 +23,11 @@ export default function TaskCard({ task, handleDelete }) {
                             {taskTitle}
                         </h3>
                         <div className="flex justify-evenly items-center cursor-pointer text-xl space-x-2">
-                            <BiEdit />
+                            {/* /my-tasks/:id/edit */}
+                            {/**/}
+                            <Link to={`/my-tasks/${_id}/edit `}>
+                                <button onClick={() => { }}> <BiEdit /></button>
+                            </Link>
                             <button onClick={() => handleDelete(_id)}><BiTrashAlt /></button>
                         </div>
                         {/* <p className=" text-slate-400"> $8.99</p> */}
